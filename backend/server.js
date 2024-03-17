@@ -20,13 +20,7 @@ app.get("/students",(req,res)=>{
         return res.json(data);
     })
 })
-connection.connect((err) => {
-    if (err) {
-      console.error('Error connecting to MySQL database: ', err);
-      return;
-    }
-    console.log('Connected to MySQL database!');
-  });
+
 app.listen(8081, ()=>{
     console.log("Running on port....")
 })
