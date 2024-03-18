@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(bodyParser.json());
@@ -30,10 +30,10 @@ const userSchema = new mongoose.Schema({
   password: String,
 });
 
-const User = mongoose.model('User', userSchema);
+const User = mongoose.model('User-login', userSchema);
 
 // Signup endpoint
-app.post('/signup', async (req, res) => {
+app.post('/Register', async (req, res) => {
   try {
     const { username, email, password } = req.body;
     const user = new User({ username, email, password });
